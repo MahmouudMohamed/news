@@ -14,3 +14,4 @@ final class GetNewsLoadingState extends HomeStates {}
 final class GetNewsErrorState extends HomeStates {}
 
 final class GetNewsSuccessState extends HomeStates {}
+final class HomeChangeSource extends HomeStates {}

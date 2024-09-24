@@ -14,6 +14,11 @@ class HomeCubit extends Cubit<HomeStates> {
   static HomeCubit get(context)=>BlocProvider.of(context);
   SourcesResponse? sourcesResponse;
   NewsResponse? newsResponse;
+  int selectedIndex = 0;
+  changeIndex(int index) {
+    selectedIndex = index;
+    emit(HomeChangeSource());
+  }
 
   getSources(String id) async {
     emit(GetSourcesLoadingState());
