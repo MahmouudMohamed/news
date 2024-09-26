@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_project/UI/Category/category_fragment.dart';
-import 'package:news_project/search_tab.dart';
+import 'package:news_project/UI/search_tab.dart';
 
 import 'UI/Source/source_widget.dart';
 import 'UI/drawer/home_drawer.dart';
