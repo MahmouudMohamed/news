@@ -12,10 +12,10 @@ class RowItem extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon,size: 40,),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          Text(name,style: TextStyle(fontSize: 30),)
+          Text(name,style: const TextStyle(fontSize: 30),)
         ],
       ),
     );

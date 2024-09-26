@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_project/utils/app_color.dart';
 import '../../api manager/api_manager.dart';
 import '../../view model/home_cubit.dart';
 import '../../view model/home_state.dart';
@@ -14,8 +15,8 @@ class NewsWigdet extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeStates>(builder: (context, state) {
       var cubit = HomeCubit.get(context);
       if(state is GetSourcesLoadingState||state is GetNewsLoadingState){
-        return const Center(
-          child: CircularProgressIndicator(color: Colors.green,),
+        return  Center(
+          child: CircularProgressIndicator(color: AppColors.redColor,),
         );
       }
       return ListView.builder(

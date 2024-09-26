@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../model/NewsResponse.dart';
+import '../../utils/app_color.dart';
 import 'news_details.dart';
 
 class NewsItem extends StatelessWidget {
@@ -15,8 +17,8 @@ class NewsItem extends StatelessWidget {
         Navigator.pushNamed(context, NewsDetails.routeName,arguments: articles);
       },
       child: Container(
-        padding: EdgeInsets.all(5),
-        margin: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Colors.grey.shade100,
             borderRadius: BorderRadius.circular(25)),
@@ -25,7 +27,7 @@ class NewsItem extends StatelessWidget {
           children: [
             Container(
               clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25),
                   topRight: Radius.circular(25),
@@ -34,11 +36,16 @@ class NewsItem extends StatelessWidget {
               child: CachedNetworkImage(
                 height: MediaQuery.of(context).size.height*0.28,
                 imageUrl: articles.urlToImage ?? "",fit: BoxFit.fill,
-                placeholder: (context, url) => Center(
-                    child: CircularProgressIndicator(
-                  color: Colors.green,
-                )),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                placeholder: (context, text) => Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width*0.2,
+                    height: MediaQuery.of(context).size.height*0.28,
+                    color: Colors.grey[600]!,
+                  ),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
             Text(articles.author ?? ""),

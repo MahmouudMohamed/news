@@ -56,6 +56,7 @@ class HomeCubit extends Cubit<HomeStates> {
       var response = await http.get(url);
       if (response.statusCode == 200) {
         newsResponse = NewsResponse.fromJson(jsonDecode(response.body));
+
         emit(GetNewsSuccessState());
       } else {
         emit(GetNewsErrorState());
@@ -64,4 +65,30 @@ class HomeCubit extends Cubit<HomeStates> {
       emit(GetNewsErrorState());
     }
   }
+
+
+  getSearchData({String? sourceId, String? searchId}) async {
+    emit(GetSearchLoadingState());
+    Uri url = Uri.https(
+      EndPoints.baseUrl,
+      EndPoints.everything,
+      {
+        "apiKey": EndPoints.apiKey,
+        "sources": sourceId,
+        "q": searchId,
+      },
+    );
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        newsResponse = NewsResponse.fromJson(jsonDecode(response.body));
+        emit(GetSearchSuccessState());
+      } else {
+        emit(GetSearchErrorState());
+      }
+    } catch (e) {
+      emit(GetSearchErrorState());
+    }
+  }
+
 }

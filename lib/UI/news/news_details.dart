@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../home_screen.dart';
 import '../../model/NewsResponse.dart';
+import '../../utils/app_color.dart';
 class NewsDetails extends StatelessWidget {
   static const String routeName = "news";
   const NewsDetails({super.key});
@@ -24,16 +25,16 @@ class NewsDetails extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             HomeScreen.selectedCategory == null
-                ? "News Details"
+                ? "Akhbarab News Details"
                 : HomeScreen.selectedCategory!.title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
             ),
           ),
         ),
         body: Container(
-          padding: EdgeInsets.all(5),
-          margin: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
+          margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               color: Colors.grey.shade50,
               borderRadius: BorderRadius.circular(25)),
@@ -42,7 +43,7 @@ class NewsDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25),
@@ -52,9 +53,9 @@ class NewsDetails extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.28,
                   imageUrl: articles.urlToImage ?? "",
                   fit: BoxFit.fill,
-                  placeholder: (context, url) => Center(
+                  placeholder: (context, url) =>  Center(
                       child: CircularProgressIndicator(
-                    color: Colors.green,
+                        color: AppColors.redColor,
                   )),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),

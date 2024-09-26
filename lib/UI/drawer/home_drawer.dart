@@ -20,9 +20,9 @@ class HomeDrawer extends StatelessWidget {
           ),
           width: double.infinity,
           // height: MediaQuery.of(context).size.height*0.2,
-          decoration: BoxDecoration(color: AppColors.primaryLightColor),
-          child: Text(
-            "News App!",
+          decoration: BoxDecoration(color: AppColors.redColor),
+          child: const Text(
+            "Akhbarak App!",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 25,color: Colors.white),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_project/UI/Category/category_fragment.dart';
+import 'package:news_project/search_tab.dart';
 
 import 'UI/Source/source_widget.dart';
 import 'UI/drawer/home_drawer.dart';
@@ -33,11 +34,18 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           appBar: AppBar(
             title:  Text(HomeScreen.selectedCategory == null
-                ? "News App"
+                ? "Akhbarak App"
                 : HomeScreen.selectedCategory!.title,),
             actions: [
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.search_rounded))
+             IconButton(
+                onPressed: () {
+                  showSearch(context: context, delegate: SearchTab());
+                },
+                icon: Icon(
+                  Icons.search_rounded,
+                  size: 30,
+                ),
+              )
             ],
           ),
           body: HomeScreen.selectedCategory == null
