@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_project/utils/app_color.dart';
-import '../../api manager/api_manager.dart';
 import '../../view model/home_cubit.dart';
 import '../../view model/home_state.dart';
 import 'news_item.dart';

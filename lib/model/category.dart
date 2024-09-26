@@ -1,9 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
-
-import '../utils/app_color.dart';
-
 class Categorys {
   String id;
   String title;

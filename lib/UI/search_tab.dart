@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_project/utils/app_color.dart';
-import 'package:news_project/view%20model/home_cubit.dart';
-import 'package:news_project/view%20model/home_state.dart';
+import '../utils/api manager/api_manager.dart';
 import 'news/news_item.dart';
-import '../api manager/api_manager.dart';
 import '../model/NewsResponse.dart';
 
 class SearchTab extends SearchDelegate {
