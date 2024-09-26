@@ -11,28 +11,26 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: Card(
+        clipBehavior: Clip.antiAlias,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Image.asset(
+              fit: BoxFit.fill,
+              category.imagePath,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height ,
+            ),
 
-      decoration: BoxDecoration(
-          color: category.color,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-            bottomLeft: Radius.circular(index % 2 != 0 ? 20 : 0),
-            bottomRight: Radius.circular(index % 2 == 0 ? 20 : 0),
-          )),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            category.imagePath,
-            width: MediaQuery.of(context).size.width * 0.4,
-            height: MediaQuery.of(context).size.height * 0.12,
-          ),
-          Text(
-            category.title,
-            style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),
-          )
-        ],
+            Text(
+              category.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 27,fontWeight: FontWeight.bold,color: Colors.white),
+            ),
+
+          ],
+        ),
       ),
     );
   }

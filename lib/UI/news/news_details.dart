@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../home_screen.dart';
@@ -53,17 +54,22 @@ class NewsDetails extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.28,
                   imageUrl: articles.urlToImage ?? "",
                   fit: BoxFit.fill,
-                  placeholder: (context, url) =>  Center(
-                      child: CircularProgressIndicator(
-                        color: AppColors.redColor,
-                  )),
+                  placeholder: (context, text) => Shimmer.fromColors(
+                    baseColor: Colors.grey[300]!,
+                    highlightColor: Colors.grey[100]!,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width*0.2,
+                      height: MediaQuery.of(context).size.height*0.28,
+                      color: Colors.grey[600]!,
+                    ),
+                  ),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
               ),
               Text(articles.author ?? ""),
               Text(articles.title ?? ""),
               Text(articles.publishedAt!.substring(0, 10) ?? "",textAlign: TextAlign.end,),
-              Text(articles.description!.substring(0, 99) ?? ""),
+              Text(articles.description?? ""),
               Text(articles.content ?? ""),
               SizedBox(
                 height: 20,

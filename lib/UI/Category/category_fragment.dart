@@ -22,7 +22,7 @@ class CategoryFragment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              "Pick Your Category\nOf Interest",
+              "Pick Your Category Of Interest : ",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -33,8 +33,8 @@ class CategoryFragment extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 2,
                 mainAxisExtent: 150,
               ),
               itemBuilder: (context, index) {
