@@ -32,6 +32,7 @@ class HomeCubit extends Cubit<HomeStates> {
       if (response.statusCode == 200) {
         sourcesResponse = SourcesResponse.fromJson(jsonDecode(response.body));
         emit(GetSourcesSuccessState());
+        getNewsData(sourceId: sourcesResponse?.sources?[selectedIndex].id??"");
       } else {
         emit(GetSourcesErrorState());
       }

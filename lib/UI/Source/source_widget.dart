@@ -8,16 +8,17 @@ import '../../model/SourcesResponse.dart';
 import '../../view model/home_state.dart';
 import '../news/news_wigdet.dart';
 
-class SourceWidget extends StatelessWidget {
-  SourceWidget({required this.id, super.key});
+class HomeWidget extends StatelessWidget {
+  HomeWidget({required this.id, super.key});
   String id;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => HomeCubit()..getSources(id),
-        child: Column(
+        child:  Column(
           children: [
-             CustomSource(),
+             const CustomSource(),
+            Expanded(child: NewsWigdet(id: id,)),
           ],
         ));
     // FutureBuilder(

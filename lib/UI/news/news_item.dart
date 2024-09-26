@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../model/NewsResponse.dart';
+import 'news_details.dart';
 
 class NewsItem extends StatelessWidget {
   Articles articles;
@@ -10,9 +11,9 @@ class NewsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () {
-      //   Navigator.pushNamed(context, NewsDetails.routeName,arguments: articles);
-      // },
+      onTap: () {
+        Navigator.pushNamed(context, NewsDetails.routeName,arguments: articles);
+      },
       child: Container(
         padding: EdgeInsets.all(5),
         margin: EdgeInsets.all(10),

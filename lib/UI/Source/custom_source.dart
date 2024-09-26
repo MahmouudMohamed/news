@@ -11,14 +11,18 @@ class CustomSource extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeStates>(builder: (context, state) {
       var cubit = HomeCubit.get(context);
-      if(state is GetSourcesLoadingState){
-        return const Center(
-          child: CircularProgressIndicator(color: Colors.green,),
-        );
+
+      if (state is HomeChangeSource) {
+        HomeCubit.get(context).getNewsData(
+            sourceId: HomeCubit.get(context)
+                .sourcesResponse
+                ?.sources?[HomeCubit.get(context).selectedIndex]
+                .id??"");
       }
       return DefaultTabController(
           length: cubit.sourcesResponse?.sources?.length ?? 0,
           child: TabBar(
+            overlayColor: WidgetStateColor.transparent,
             onTap: (value) {
               cubit.changeIndex(value);
             },

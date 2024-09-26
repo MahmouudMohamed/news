@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news_project/UI/Category/category_fragment.dart';
 
@@ -45,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ? CategoryFragment(
                   onCategoryItemClick: onCategoryItemClick,
                 )
-              : SourceWidget(id:HomeScreen.selectedCategory!.id ,)),
+              : HomeWidget(id:HomeScreen.selectedCategory!.id ,)),
     );
   }
 
