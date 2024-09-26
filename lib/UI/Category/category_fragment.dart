@@ -22,8 +22,8 @@ class CategoryFragment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              "Pick Your Category Of Interest : ",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              "Pick Your Category Of Interest:",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 15,

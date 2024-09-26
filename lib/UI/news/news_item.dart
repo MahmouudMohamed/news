@@ -20,7 +20,6 @@ class NewsItem extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: Colors.grey.shade100,
             borderRadius: BorderRadius.circular(25)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

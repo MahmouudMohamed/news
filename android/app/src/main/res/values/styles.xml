@@ -6,7 +6,7 @@
              the Flutter engine draws its first frame -->
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
-        <item name="android:windowSplashScreenBrandingImage">@drawable/brand</item>
+<!--        <item name="android:windowSplashScreenBrandingImage">@drawable/brand</item>-->
     </style>
     <!-- Theme applied to the Android Window as soon as the process has started.
          This theme determines the color of the Android Window while your

@@ -26,7 +26,7 @@ class CategoryItem extends StatelessWidget {
             Text(
               category.title,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 27,fontWeight: FontWeight.bold,color: Colors.white),
+              style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),
             ),
 
           ],
