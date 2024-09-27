@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../model/NewsResponse.dart';
-import '../../utils/app_color.dart';
 import 'news_details.dart';
 
 class NewsItem extends StatelessWidget {
@@ -50,7 +49,7 @@ class NewsItem extends StatelessWidget {
             Text(articles.author ?? ""),
             Text(articles.title ?? ""),
             Text(articles.description ?? ""),
-            Text(articles.publishedAt!.substring(0,10)?? "",textAlign: TextAlign.end,),
+            Text(articles.publishedAt!.substring(0,10),textAlign: TextAlign.end,),
           ],
         ),
       ),

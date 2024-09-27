@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/api manager/api_manager.dart';
+import '../utils/app_color.dart';
 import 'news/news_item.dart';
 import '../model/NewsResponse.dart';
 
@@ -154,9 +155,9 @@ searchSuggestionsBar() {
           );
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
+          return  Center(
               child: CircularProgressIndicator(
-            color: Colors.green,
+            color: AppColors.redColor,
           ));
         }
         if (snapshot.hasError) {

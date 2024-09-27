@@ -10,27 +10,25 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Image.asset(
-              fit: BoxFit.fill,
-              category.imagePath,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height ,
-            ),
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Image.asset(
+            fit: BoxFit.fill,
+            category.imagePath,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height ,
+          ),
 
-            Text(
-              category.title,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),
-            ),
+          Text(
+            category.title,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),
+          ),
 
-          ],
-        ),
+        ],
       ),
     );
   }

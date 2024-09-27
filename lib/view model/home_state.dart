@@ -1,6 +1,4 @@
 
-import '../model/NewsResponse.dart';
-
 abstract class HomeStates {}
 
 final class HomeInitialState extends HomeStates {}

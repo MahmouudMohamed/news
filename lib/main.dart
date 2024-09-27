@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName:(context)=>HomeScreen(),
-        NewsDetails.routeName:(context)=>NewsDetails(),
+        NewsDetails.routeName:(context)=>const NewsDetails(),
       },
     );
   }

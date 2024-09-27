@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   showSearch(context: context, delegate: SearchTab());
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.search_rounded,
                   size: 30,
                 ),

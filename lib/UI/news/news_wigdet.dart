@@ -27,6 +27,6 @@ class NewsWigdet extends StatelessWidget {
         itemCount: cubit.newsResponse?.articles?.length??0,
       );
     });
-    ;
+
   }
 }

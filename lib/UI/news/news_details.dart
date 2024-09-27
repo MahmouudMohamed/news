@@ -2,10 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../../home_screen.dart';
 import '../../model/NewsResponse.dart';
-import '../../utils/app_color.dart';
 class NewsDetails extends StatelessWidget {
   static const String routeName = "news";
   const NewsDetails({super.key});
@@ -15,7 +12,7 @@ class NewsDetails extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         image: DecorationImage(
           image: AssetImage("assets/images/pattern.png"),
@@ -25,9 +22,7 @@ class NewsDetails extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            HomeScreen.selectedCategory == null
-                ? "Akhbarab News Details"
-                : HomeScreen.selectedCategory!.title,
+            articles.source?.name??"",
             style: const TextStyle(
               color: Colors.white,
             ),
@@ -63,15 +58,15 @@ class NewsDetails extends StatelessWidget {
                       color: Colors.grey[600]!,
                     ),
                   ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
               Text(articles.author ?? ""),
               Text(articles.title ?? ""),
-              Text(articles.publishedAt!.substring(0, 10) ?? "",textAlign: TextAlign.end,),
+              Text(articles.publishedAt!.substring(0, 10) ,textAlign: TextAlign.end,),
               Text(articles.description?? ""),
               Text(articles.content ?? ""),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               InkWell(
